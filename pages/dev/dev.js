@@ -1,0 +1,179 @@
+// pages/dev/dev.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    selectedTagId:'0',
+    //旧有选中的标签id
+    oldTagId:'0',
+    //请求第几页的数据
+    pageNum:'1',
+    currentTag:'',
+    listData:[],
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.data.currentTag = 'Android';
+    this.requestData();
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    this.data.pageNum++;
+    this.requestData();
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  },
+
+  checkPage: function (event) {
+    var newTagId = event.target.id;
+    this.checkTagStyle(newTagId);
+    this.scrollTop();
+    switch (newTagId) {
+      case '0':
+        this.data.currentTag='Android'
+        break;
+      case '1':
+        this.data.currentTag='iOS'
+        break;
+      case '2':
+        this.data.currentTag='前端'
+        break;
+      case '3':
+        this.data.currentTag = 'App'
+        break;
+      case '4':
+        this.data.currentTag = '拓展资源'
+        break;
+      default:
+        break;
+    }
+    
+    if(this.data.oldTagId!=newTagId){
+      this.data.pageNum=1;
+    }
+    this.requestData();
+    this.data.oldTagId=newTagId;
+    
+  },
+
+  checkTagStyle:function(newTagId){
+    this.setData({ selectedTagId: newTagId })
+  },
+  requestData:function(){
+    var that = this;
+    console.log("pageNum"+that.data.pageNum)
+    wx.request({
+      url: 'https://gank.io/api/data/'+that.data.currentTag+'/15/'+that.data.pageNum,
+      data: {},
+      method: 'GET',
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        if (that.data.pageNum == 1) {
+          that.data.listData = [];
+          that.setData({ listData: that.data.listData })
+        }
+        for (var i = 0; i < res.data.results.length; i++) {
+          that.data.listData.push(res.data.results[i])
+        }
+        that.setData({listData:that.data.listData})
+      },
+      fail: function () {},
+      complete: function () {}
+    })
+
+  },
+
+  scrollTop:function(){
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration:500
+    })
+  },
+
+  devItemClick:function(e){
+    var idx= e.target.id;
+    var item = this.data.listData[idx];
+    var link = item.url;
+    if(item.images!=null){
+      console.log("AAA")
+      return;
+    }
+    wx.showModal({
+      title: '复制该链接',
+      content: '完成后请手动打开浏览器，是否继续？'+link,
+      success: function (res) {
+        if (res.confirm) {
+          wx.setClipboardData({
+            data: link,
+            success: function () {
+              wx.showToast({
+                title: '复制成功',
+                duration:1500,
+              })
+
+            },
+            fail: function () {
+              wx.showToast({
+                title: '复制失败',
+                duration: 500,
+              })
+            }
+          })
+        } else if (res.cancel) {
+          wx.showToast({
+            title: '取消复制',
+            duration: 500,
+          })
+        }
+      }
+    })
+    
+  }
+})

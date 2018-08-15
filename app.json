@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/welfare/welfare",
+    "pages/welfare/mm/mm",
+    "pages/welfare/bigImg/bigImg",
+    "pages/command/command",
+    "pages/dev/dev",
+    "pages/about/about",
+    "pages/dev/devdetail/devdetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#00bcdc",
+    "navigationBarTitleText": "干货集中营",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#00bcdc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "今日",
+        "iconPath": "imgs/today.png",
+        "selectedIconPath": "imgs/today_selected.png"
+      },
+      {
+        "pagePath": "pages/dev/dev",
+        "text": "开发",
+        "iconPath": "imgs/dev.png",
+        "selectedIconPath": "imgs/dev_selected.png"
+      },
+      {
+        "pagePath": "pages/command/command",
+        "text": "瞎推荐",
+        "iconPath": "imgs/command.png",
+        "selectedIconPath": "imgs/command_selected.png"
+      },
+      {
+        "pagePath": "pages/welfare/welfare",
+        "text": "福利",
+        "iconPath": "imgs/welfare.png",
+        "selectedIconPath": "imgs/welfare_selected.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "imgs/about.png",
+        "selectedIconPath": "imgs/about_selected.png"
+      }
+    ]
+  }
+}

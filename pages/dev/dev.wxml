@@ -1,0 +1,47 @@
+<!--pages/dev/dev.wxml-->
+<view class='body'>
+  <scroll-view scroll-x='true' class='menu-scroller'>
+    <view>
+      <text class='{{selectedTagId==0?"active":""}}' id='0' bindtap='checkPage'>Android</text>
+    </view>
+    <view>
+      <text class='{{selectedTagId==1?"active":""}}' id='1' bindtap='checkPage'>iOS</text>
+    </view>
+    <view>
+      <text class='{{selectedTagId==2?"active":""}}' id='2' bindtap='checkPage'>前端</text>
+    </view>
+    <view>
+      <text class='{{selectedTagId==3?"active":""}}' id='3' bindtap='checkPage'>App</text>
+    </view>
+    <view>
+      <text class='{{selectedTagId==4?"active":""}}' id='4' bindtap='checkPage'>拓展资源</text>
+    </view>
+
+  </scroll-view>
+
+  <view class='content'>
+    <view class='list' wx:for="{{listData}}" wx:for-index="idx">
+      <view class='data-item'>
+        <text wx:if="{{(idx==0||!(item.publishedAt==listData[idx-1].publishedAt))?true:false}}" class='item-date'>{{item.publishedAt}}</text>
+        <view class='item-info' bindtap='devItemClick' id="{{idx}}">
+          <view>
+            <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
+            <!--因gif图片过多可能引起卡顿以及内存异常，故取消图片展示-->
+            <!--<swiper wx:if="{{item.images.length>=1}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+              <block wx:for="{{item.images}}">
+                <swiper-item>
+                  <image src="{{item}}" class="slide-image" width="355" height="150" />
+                </swiper-item>
+              </block>
+            </swiper>-->
+            <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+</view>

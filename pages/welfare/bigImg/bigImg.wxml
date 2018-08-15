@@ -1,0 +1,4 @@
+<!--pages/bigImg.wxml-->
+<view class='big-img-container'>
+  <image src='{{imgUrl}}' mode='aspectFill' bind:longpress='saveImg'></image>
+</view>
