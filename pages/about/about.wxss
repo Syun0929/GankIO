@@ -1,1 +1,61 @@
 /* pages/about/about.wxss */
+page{
+  background: #f1f1f6;
+}
+.about-header{
+  width: 100%;
+  height: 360rpx;
+}
+
+.header-container{
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container image{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+.header-container text{
+  font-size: 14px;
+  color: rgb(68, 67, 67);
+  display: block;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+
+.about-container{
+  height: 360rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+
+.about-item{
+  display: flex;
+  height: 100rpx;
+  width: 100%;
+  background: white;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  justify-content: space-between;
+}
+
+.about-item text{
+  line-height: 100rpx;
+  display: block;
+  margin-left: 20rpx;
+  font-size: 18sp;
+}
+
+.about-item image{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 30rpx;
+}

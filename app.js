@@ -4,5 +4,6 @@ App({
     
   },
   globalData: {
+    devDetailImages:[]
   }
 })

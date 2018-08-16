@@ -1,4 +1,4 @@
-// pages/about/about.js
+// pages/about/author/author.js
 Page({
 
   /**
@@ -62,24 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  clickToGank:function(){
-    wx.navigateTo({
-      url: 'gank/gank'
-    })
-
-  },
-
-  clickToProject: function () {
-    wx.navigateTo({
-      url: 'project/project',
-    })
-  },
-
-  clickToAuthor: function () {
-    wx.navigateTo({
-      url: 'author/author',
-    })
   }
 })

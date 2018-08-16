@@ -1,18 +1,26 @@
 // pages/dev/devdetail/devdetail.js
+var app = getApp()
+var utils = require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    listImages:[],
+    link:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.setNavigationBarTitle({
+      title: options.desc,
+    })
+    this.data.link = options.url
+    this.data.listImages = app.globalData.devDetailImages
+    this.setData({listImages:this.data.listImages,desc:options.desc})
   },
 
   /**
@@ -62,5 +70,20 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  copyLink:function(){
+    utils.copyToClipBoard(this.data.link)
+  },
+
+  clickImage:function(event){
+    var imgUrl = event.target.dataset.url
+    console.log(imgUrl)
+    var imgsArray = new Array();
+    imgsArray.push(imgUrl)
+    wx.previewImage({
+      current:imgUrl,
+      urls:imgsArray
+    })
   }
 })

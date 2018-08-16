@@ -1,1 +1,39 @@
 /* pages/dev/devdetail/devdetail.wxss */
+page{
+  background: #f1f1f6;
+}
+.detail-img{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.detail-img image{
+  width: 400rpx;
+  text-align: center;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.copy-link button{
+  margin: 15rpx;
+  background: #00bcdc;
+  color: white;
+}
+
+.detail-desc{
+  margin-top: 15rpx;
+  margin-bottom: 6rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  border-radius: 10rpx;
+  background: white;
+  padding: 10rpx;
+}
+
+.detail-desc text{
+  margin: 15rpx;
+  font-size: 17px;
+  display: block;  
+}
+

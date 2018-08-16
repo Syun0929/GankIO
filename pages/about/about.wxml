@@ -1,2 +1,26 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view>
+  <view class='about-header'>
+    <view class='header-container'>
+      <image src='../../imgs/icon.png'></image>
+      <text>GankIO:干货集中营WX</text>
+    </view>
+  </view>
+
+  <view class='about-container'>
+    <view class='about-item' bindtap='clickToGank'>
+      <text>关于干货集中营</text>
+      <image src='../../imgs/open.png'></image>
+    </view>
+
+    <view class='about-item' bindtap='clickToProject'>
+      <text>关于本项目</text>
+      <image src='../../imgs/open.png'></image>
+    </view>
+
+    <view class='about-item' bindtap='clickToAuthor'>
+      <text>关于作者</text>
+      <image src='../../imgs/open.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,4 +1,4 @@
-// pages/about/about.js
+// pages/index/date/date.js
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.requestAllDates();
   },
 
   /**
@@ -64,22 +64,12 @@ Page({
   
   },
 
-  clickToGank:function(){
-    wx.navigateTo({
-      url: 'gank/gank'
-    })
-
-  },
-
-  clickToProject: function () {
-    wx.navigateTo({
-      url: 'project/project',
-    })
-  },
-
-  clickToAuthor: function () {
-    wx.navigateTo({
-      url: 'author/author',
+  requestAllDates:function(){
+    wx.request({
+      url: 'https://gank.io/api/day/history',
+      success:function(res){
+        console.log(res.data.results)
+      }
     })
   }
 })

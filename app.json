@@ -3,18 +3,22 @@
     "pages/index/index",
     "pages/welfare/welfare",
     "pages/welfare/mm/mm",
-    "pages/welfare/bigImg/bigImg",
     "pages/command/command",
     "pages/dev/dev",
+    "pages/dev/devdetail/devdetail",
     "pages/about/about",
-    "pages/dev/devdetail/devdetail"
+    "pages/about/author/author",
+    "pages/about/gank/gank",
+    "pages/about/project/project",
+    "pages/index/date/date",
+    "pages/index/history/history"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#00bcdc",
     "navigationBarTitleText": "干货集中营",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true,
+    
     "onReachBottomDistance": 50
   },
   "tabBar": {

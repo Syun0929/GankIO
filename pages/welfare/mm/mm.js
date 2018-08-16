@@ -90,11 +90,14 @@ Page({
     })
   },
 
-  itemClick:function(event){
-    var index = event.target.id;
-    var item = this.data.fuliMMs[index];
-    wx.navigateTo({
-      url: '../bigImg/bigImg?imgUrl='+item.url
+  clickImage: function (event) {
+    var imgUrl = event.target.dataset.url
+    console.log(imgUrl)
+    var imgsArray = new Array();
+    imgsArray.push(imgUrl)
+    wx.previewImage({
+      current: imgUrl,
+      urls: imgsArray
     })
   }
 })

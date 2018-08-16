@@ -1,2 +1,3 @@
 <!--pages/command/command.wxml-->
 <text>pages/command/command.wxml</text>
+<view class="search" bindtap="chooseDateClick"><text>搜索</text></view>

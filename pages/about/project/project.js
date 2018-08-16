@@ -1,11 +1,10 @@
-// pages/bigImg.js
+// pages/about/project/project.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl:''
   
   },
 
@@ -13,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ imgUrl:options.imgUrl})
+  
   },
 
   /**
@@ -63,19 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  saveImg: function() {
-    wx.showModal({
-      title: '提示',
-      content: '是否保存该图片',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
   }
 })

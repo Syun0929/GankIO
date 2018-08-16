@@ -1,4 +1,6 @@
 // pages/dev/dev.js
+const app = getApp()
+var utils = require('../../utils/util.js')
 Page({
 
   /**
@@ -60,6 +62,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
     this.data.pageNum++;
     this.requestData();
   },
@@ -107,6 +112,9 @@ Page({
     this.setData({ selectedTagId: newTagId })
   },
   requestData:function(){
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this;
     console.log("pageNum"+that.data.pageNum)
     wx.request({
@@ -120,8 +128,10 @@ Page({
           that.setData({ listData: that.data.listData })
         }
         for (var i = 0; i < res.data.results.length; i++) {
+          res.data.results[i].publishedAt = res.data.results[i].publishedAt.substring(0,10)
           that.data.listData.push(res.data.results[i])
         }
+        wx.hideLoading()
         that.setData({listData:that.data.listData})
       },
       fail: function () {},
@@ -142,38 +152,13 @@ Page({
     var item = this.data.listData[idx];
     var link = item.url;
     if(item.images!=null){
-      console.log("AAA")
+      app.globalData.devDetailImages=item.images;
+      wx.navigateTo({
+        url: 'devdetail/devdetail?desc=' + item.desc+'&url='+item.url,
+      })
       return;
     }
-    wx.showModal({
-      title: '复制该链接',
-      content: '完成后请手动打开浏览器，是否继续？'+link,
-      success: function (res) {
-        if (res.confirm) {
-          wx.setClipboardData({
-            data: link,
-            success: function () {
-              wx.showToast({
-                title: '复制成功',
-                duration:1500,
-              })
-
-            },
-            fail: function () {
-              wx.showToast({
-                title: '复制失败',
-                duration: 500,
-              })
-            }
-          })
-        } else if (res.cancel) {
-          wx.showToast({
-            title: '取消复制',
-            duration: 500,
-          })
-        }
-      }
-    })
+    utils.copyToClipBoard(link)
     
   }
 })

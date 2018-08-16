@@ -1,2 +1,17 @@
 <!--pages/dev/devdetail/devdetail.wxml-->
-<text>pages/dev/devdetail/devdetail.wxml</text>
+<view>
+  <view class='detail-desc'>
+    <text>{{desc}}</text>
+  </view>
+
+  <view class='detail-images'>
+    <view class='detail-img' wx:for="{{listImages}}">
+      <image src='{{item}}' mode='widthFix' bindtap='clickImage' data-url='{{item}}'></image>
+    </view>
+
+  </view>
+
+  <view class='copy-link'>
+  <button bindtap='copyLink'>复制链接</button>
+  </view>
+</view>

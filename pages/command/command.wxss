@@ -1,1 +1,22 @@
 /* pages/command/command.wxss */
+.search {
+    float: right;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 20rpx;
+    right: 10px;  
+    width: 45px;
+    height: 45px;
+    background: #00bcdc;
+    border: 0 solid #ffffff;
+    border-radius: 500px;
+    box-shadow: 2px 2px 2px #cccccc;
+}
+
+.search text{
+  color: white;
+  display: block;
+  text-align: center;
+  line-height: 45px;
+  font-size: 16px;
+}
