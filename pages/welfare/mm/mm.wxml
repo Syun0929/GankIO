@@ -1,8 +1,0 @@
-<view class='content'>
-<view class='list' wx:for="{{fuliMMs}}" wx:for-index="idx">
-  <view class='mm-item'>
-    <image src='{{item.url}}' mode='aspectFill' bindtap='clickImage' id="{{idx}}" data-url='{{item.url}}'></image>
-    <text selectable='false'>{{item.desc}}</text>
-  </view>
-</view>
-</view>

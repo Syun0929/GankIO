@@ -1,1 +1,109 @@
 /* pages/index/history/history.wxss */
+.history {
+    float: right;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 20rpx;
+    right: 10px;  
+    width: 45px;
+    height: 45px;
+    background: #00bcdc;
+    border: 0 solid #ffffff;
+    border-radius: 500px;
+    box-shadow: 2px 2px 2px #cccccc;
+}
+
+page{
+  background: #f1f1f6;
+}
+
+.history text{
+  color: white;
+  display: block;
+  text-align: center;
+  line-height: 45px;
+  font-size: 16px;
+}
+
+.fuli-container{
+  width: 100%;
+  height: 480px;
+}
+
+.fuli-container swiper{
+  width: 100%;
+  height: 480px;
+}
+
+.slide-image{
+  width: 100%;
+  height: 450px;
+}
+
+.item-info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  box-shadow:0rpx 0rpx 6rpx gainsboro;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  margin-bottom: 35rpx;
+  background: white;
+}
+
+.desc{
+  font-size: 18px;
+  display: inline-block;
+  width: 100%;
+}
+
+.btn-open{
+  background: #00bcdc;
+  color: white;
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  margin-top: 10rpx;
+}
+
+.who{
+  font-size: 10px;
+  color: #00bcdc;
+  display: inline-block;
+  margin-bottom: 5rpx;
+}
+
+.item-swiper{
+  width: 450rpx;
+  margin: 0 auto;
+  height: 360px;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.item-slide-image{
+  width: 450rpx;
+  height: 360px;
+}
+
+.title-container{
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+}
+
+.title{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom-width: 2rpx;
+  border-bottom-style: solid;
+  border-bottom-color: #da9f59;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  display: block;
+  margin-right: 20rpx;
+}

@@ -1,4 +1,8 @@
 /* pages/command/command.wxss */
+page{
+  background: #f1f1f6;
+}
+
 .search {
     float: right;
     background-color: #ffffff;
@@ -19,4 +23,54 @@
   text-align: center;
   line-height: 45px;
   font-size: 16px;
+}
+
+.content{
+  display: block;
+  height: 100vh;
+  margin-top: 15rpx;
+}
+
+.item-date{
+  color: #00bcdc;
+  font-size: 20px;
+  display: block;
+  margin-left: 20rpx;
+  margin-bottom: 15rpx;
+  margin-top: 10rpx;
+  width: 236rpx;
+  padding-left: 15rpx;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+  padding-right: 10rpx;
+  border-radius: 5rpx;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  background: white;
+  
+}
+
+.item-info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  background: white;
+  padding-left: 15rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  margin-bottom: 35rpx;
+  border-radius: 12rpx;
+}
+
+.desc{
+  font-size: 18px;
+  display: inline-block;
+  width: 100%;
+}
+
+.who{
+  font-size: 10px;
+  color: #00bcdc;
+  display: inline-block;
+  margin-bottom: 5rpx;
 }

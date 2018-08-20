@@ -1,0 +1,35 @@
+<!--pages/command/search/search.wxml-->
+<view class='serch-header'>
+  <input placeholder='搜索内容' maxlength='15' bindinput="bindKeyInput" ></input>
+  <button class='search-btn' bindtap='searchClick'><icon type='search' color='#fff' size='20' ></icon></button>
+</view>
+
+<view class='results-container'>
+  <view class='list' wx:for="{{resultss}}" wx:for-index='idx'  bindtap='itemClick' id="{{idx}}">
+    <view class='wraper' >
+      <view class='title-wraper' id="{{idx}}">
+      <text id="{{idx}}">{{item.desc}}</text>
+      </view>
+
+      <view class='type-wraper' id="{{idx}}">
+      <text>{{item.type}}</text></view>
+
+      <view class='footer-wraper' id="{{idx}}">
+        <view class='footer-author'>
+        <text>{{item.who}}</text>
+        </view>
+        <view class='footer-date'>
+        <text>{{item.publishedAt}}</text>
+        </view>
+      
+      </view>
+    
+    
+    </view>
+
+  
+  </view>
+
+
+</view>
+

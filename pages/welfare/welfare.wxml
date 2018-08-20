@@ -1,2 +1,9 @@
 <!--pages/welfare/welfare.wxml-->
-<text>pages/welfare/welfare.wxml</text>
+<view class='content'>
+<view class='list' wx:for="{{fuliMMs}}" wx:for-index="idx">
+  <view class='mm-item'>
+    <image src='{{item.url}}' mode='aspectFill' bindtap='clickImage' id="{{idx}}" data-url='{{item.url}}'></image>
+    <button selectable='false' bindtap='clickBtn' data-date='{{item.desc}}'>{{item.desc}}</button>
+  </view>
+</view>
+</view>

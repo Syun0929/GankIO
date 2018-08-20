@@ -1,3 +1,21 @@
 <!--pages/command/command.wxml-->
-<text>pages/command/command.wxml</text>
-<view class="search" bindtap="chooseDateClick"><text>搜索</text></view>
+
+  <view class='content'>
+    <view class='list' wx:for="{{listData}}" wx:for-index="idx">
+      <view class='data-item'>
+        <text wx:if="{{(idx==0||!(item.publishedAt==listData[idx-1].publishedAt))?true:false}}" class='item-date'>{{item.publishedAt}}</text>
+        <view class='item-info' bindtap='devItemClick' id="{{idx}}">
+          <view>
+            <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
+            <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+
+<view class="search" bindtap="searchClick"><text>搜索</text></view>

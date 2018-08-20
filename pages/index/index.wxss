@@ -13,6 +13,10 @@
     box-shadow: 2px 2px 2px #cccccc;
 }
 
+page{
+  background: #f1f1f6;
+}
+
 .history text{
   color: white;
   display: block;
@@ -43,15 +47,27 @@
   margin-right: 15rpx;
   box-shadow:0rpx 0rpx 6rpx gainsboro;
   padding-left: 15rpx;
+  padding-right: 15rpx;
   padding-bottom: 10rpx;
   padding-top: 10rpx;
   margin-bottom: 35rpx;
+  background: white;
 }
 
 .desc{
   font-size: 18px;
   display: inline-block;
   width: 100%;
+}
+
+.btn-open{
+  background: #00bcdc;
+  color: white;
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  margin-top: 10rpx;
 }
 
 .who{

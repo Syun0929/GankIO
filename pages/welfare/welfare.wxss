@@ -1,1 +1,52 @@
 /* pages/welfare/welfare.wxss */
+page{
+  background: #f1f1f6;
+}
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rpx;
+}
+.list{
+  width: 48%;
+  justify-content: center;
+  display: flex;
+  background: white;
+  margin-bottom: 10rpx;
+  box-shadow:1rpx 1rpx 5rpx gainsboro;
+  padding-bottom: 6rpx;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.mm-item{
+  width: 100%;
+  justify-content: center;
+  
+}
+.mm-item image{
+  width: 98%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.mm-item button{
+  color: #00bcdc;
+  display: block;
+  background: white;
+  margin: 0 auto;
+  height: 50rpx;
+  line-height: 48rpx;
+  border-width: 1rpx;
+  box-shadow: none;
+  border-style: solid;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  width: 75%;
+  border-color: #00bcdc;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.mm-item button::after{ border: none; } 

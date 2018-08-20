@@ -32,6 +32,7 @@ const copyToClipBoard=function(link){
   })
 }
 
+
 module.exports = {
   copyToClipBoard: copyToClipBoard
 }

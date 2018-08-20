@@ -7,6 +7,10 @@ height: 0;
 color: transparent;
 }
 
+page{
+  background: #f1f1f6;
+}
+
 
 .body{
   display: flex;
@@ -70,11 +74,13 @@ color: transparent;
   flex-direction: column;
   margin-left: 15rpx;
   margin-right: 15rpx;
+  background: white;
   box-shadow:0rpx 0rpx 6rpx gainsboro;
   padding-left: 15rpx;
   padding-bottom: 10rpx;
   padding-top: 10rpx;
   margin-bottom: 35rpx;
+  border-radius: 8rpx;
 }
 
 .desc{

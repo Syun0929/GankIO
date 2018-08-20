@@ -1,25 +1,20 @@
 // pages/index/index.js
+var utils = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    androidList:[],
-    appList:[],
-    iOSList:[],
-    relaxList:[],
-    webList:[],
-    moreList:[],
-    commandList:[],
-    fuliList:[]
+    fuliList:[],
+    results: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.requestData();
+    this.requestTodayData()
   },
 
   /**
@@ -54,7 +49,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.requestData()
+    this.requestTodayData()
   },
 
   /**
@@ -71,8 +66,11 @@ Page({
   
   },
 
-  requestData:function(){
+  requestTodayData:function(){
     var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: 'https://gank.io/api/today',
       method:'GET',
@@ -80,34 +78,17 @@ Page({
         'content-type': 'application/json'
       },
       success:function(res){
-        that.data.androidList = res.data.results["Android"]
-        that.data.appList = res.data.results["App"]
-        that.data.iOSList = res.data.results["iOS"]
-        that.data.relaxList = res.data.results["休息视频"]
-        that.data.webList = res.data.results["前端"]
-        that.data.moreList = res.data.results["拓展资源"]
-        that.data.commandList = res.data.results["瞎推荐"]
         that.data.fuliList = res.data.results["福利"]
+        var resultss = res.data
+        console.log(resultss.length)
+        that.data.results = resultss
         that.setData({
-          fuliList:that.data.fuliList,
-          androidList:that.data.androidList,
-          appList:that.data.appList,
-          iOSList:that.data.iOSList,
-          relaxList:that.data.relaxList,
-          webList:that.data.webList,
-          moreList:that.data.moreList,
-          commandList:that.data.commandList,
-          fuliList:that.data.fuliList,
+          fuliList: that.data.fuliList,
+          results: that.data.results
         })
-
+        wx.hideLoading()
         wx.stopPullDownRefresh();
-      }
-    })
-  },
-
-  chooseDateClick:function(){
-    wx.navigateTo({
-      url: 'date/date',
+        }
     })
   },
 
@@ -122,8 +103,7 @@ Page({
     })
   },
 
-  itemClick:function(event){
-    console.log(event.target.id)
-
-  }
+  clickBtnOpen:function(event){
+    utils.copyToClipBoard(event.target.dataset.url)
+  },
 })

@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/welfare/welfare",
-    "pages/welfare/mm/mm",
     "pages/command/command",
     "pages/dev/dev",
     "pages/dev/devdetail/devdetail",
@@ -11,14 +10,14 @@
     "pages/about/gank/gank",
     "pages/about/project/project",
     "pages/index/date/date",
-    "pages/index/history/history"
+    "pages/index/history/history",
+    "pages/command/search/search"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#00bcdc",
     "navigationBarTitleText": "干货集中营",
     "navigationBarTextStyle": "white",
-    
     "onReachBottomDistance": 50
   },
   "tabBar": {
@@ -45,7 +44,7 @@
       },
       {
         "pagePath": "pages/welfare/welfare",
-        "text": "福利",
+        "text": "干货",
         "iconPath": "imgs/welfare.png",
         "selectedIconPath": "imgs/welfare_selected.png"
       },

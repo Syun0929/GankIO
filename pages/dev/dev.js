@@ -116,7 +116,6 @@ Page({
       title: '加载中',
     })
     var that = this;
-    console.log("pageNum"+that.data.pageNum)
     wx.request({
       url: 'https://gank.io/api/data/'+that.data.currentTag+'/15/'+that.data.pageNum,
       data: {},

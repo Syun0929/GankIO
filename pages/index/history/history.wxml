@@ -1,2 +1,47 @@
 <!--pages/index/history/history.wxml-->
-<text>pages/index/history/history.wxml</text>
+<view>
+  <view class='fuli'>
+    <view class='fuli-container'>
+      <swiper autoplay="true" interval="1000" duration="500">
+        <block wx:for="{{fuliList}}">
+          <swiper-item>
+            <image src="{{item.url}}" class="slide-image" mode='aspectFill' bindtap='clickImage' data-url='{{item.url}}' />
+          </swiper-item>
+        </block>
+      </swiper>
+
+    </view>
+  </view>
+
+  <view wx:for="{{results.category}}">
+    <view class='categories' wx:if="{{item!='福利'}}">
+      <view class='categories-container'>
+        <view class='title-container'>
+          <view class='title'>
+            <text>{{item}}</text>
+          </view>
+        </view>
+        <view class='list' wx:for="{{results.results[item]}}">
+          <view class='data-item'>
+            <view class='item-info' data-ct='android'>
+              <view>
+                <text selectable='false' class='desc'>{{item.desc}}</text>
+                <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
+                  <block wx:for="{{item.images}}">
+                    <swiper-item>
+                      <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
+                    </swiper-item>
+                  </block>
+                </swiper>
+                <button class='btn-open' data-url='{{item.url}}' bindtap='clickBtnOpen'>去打开</button>
+                <text selectable='false' class='who'>{{item.who}}</text>
+              </view>
+
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

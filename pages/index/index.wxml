@@ -2,7 +2,7 @@
 <view>
   <view class='fuli'>
     <view class='fuli-container'>
-      <swiper indicator-dots="true" autoplay="true" interval="1000" duration="500">
+      <swiper autoplay="true" interval="1000" duration="500">
         <block wx:for="{{fuliList}}">
           <swiper-item>
             <image src="{{item.url}}" class="slide-image" mode='aspectFill' bindtap='clickImage' data-url='{{item.url}}' />
@@ -13,219 +13,41 @@
     </view>
   </view>
 
-  <view class='categories'>
-    <view class='categories-container'>
-      <view class='title-container'>
-        <view class='title'>
-          <text>Android</text>
+  <view wx:for="{{results.category}}">
+    <view class='categories' wx:if="{{item!='福利'}}">
+      <view class='categories-container'>
+        <view class='title-container'>
+          <view class='title'>
+            <text>{{item}}</text>
+          </view>
         </view>
-      </view>
+        <view class='list' wx:for="{{results.results[item]}}">
+          <view class='data-item'>
+            <view class='item-info' data-ct='android'>
+              <view>
+                <text selectable='false' class='desc'>{{item.desc}}</text>
+                <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
+                  <block wx:for="{{item.images}}">
+                    <swiper-item>
+                      <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
+                    </swiper-item>
+                  </block>
+                </swiper>
+                <button class='btn-open' data-url='{{item.url}}' bindtap='clickBtnOpen'>去打开</button>
+                <text selectable='false' class='who'>{{item.who}}</text>
+              </view>
 
-      <view class='list' wx:for="{{androidList}}" wx:for-index="idx">
-        <view class='data-item'>
-          <view class='item-info' bindtap='itemClick' id="{{idx}}" data-ct='android'>
-            <view>
-              <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
-              <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
-                <block wx:for="{{item.images}}">
-                  <swiper-item>
-                    <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
-                  </swiper-item>
-                </block>
-              </swiper>
-              <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
             </view>
 
           </view>
-
         </view>
-      </view>
-    </view>
-  </view>
-
-  <view class='categories'>
-    <view class='categories-container'>
-      <view class='title-container'>
-        <view class='title'>
-          <text>App</text>
-        </view>
-      </view>
-
-      <view class='list' wx:for="{{appList}}" wx:for-index="idx">
-        <view class='data-item'>
-          <view class='item-info' bindtap='itemClick' id="{{idx}}" data-ct='app'>
-            <view>
-              <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
-              <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
-                <block wx:for="{{item.images}}">
-                  <swiper-item>
-                    <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
-                  </swiper-item>
-                </block>
-              </swiper>
-              <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
-            </view>
-
-          </view>
-
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <view class='categories'>
-    <view class='categories-container'>
-      <view class='title-container'>
-        <view class='title'>
-          <text>iOS</text>
-        </view>
-      </view>
-      <view class='list' wx:for="{{iOSList}}" wx:for-index="idx">
-        <view class='data-item'>
-          <view class='item-info' bindtap='itemClick' id="{{idx}}" data-ct='ios'>
-            <view>
-              <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
-              <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
-                <block wx:for="{{item.images}}">
-                  <swiper-item>
-                    <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
-                  </swiper-item>
-                </block>
-              </swiper>
-              <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
-            </view>
-
-          </view>
-
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <view class='categories'>
-    <view class='categories-container'>
-      <view class='title-container'>
-        <view class='title'>
-          <text>休息视频</text>
-        </view>
-      </view>
-
-      <view class='list' wx:for="{{relaxList}}" wx:for-index="idx">
-        <view class='data-item'>
-          <view class='item-info' bindtap='itemClick' id="{{idx}}" data-ct='relax'>
-            <view>
-              <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
-              <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
-                <block wx:for="{{item.images}}">
-                  <swiper-item>
-                    <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
-                  </swiper-item>
-                </block>
-              </swiper>
-              <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
-            </view>
-
-          </view>
-
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <view class='categories'>
-    <view class='categories-container'>
-
-      <view class='title-container'>
-        <view class='title'>
-          <text>前端</text>
-        </view>
-      </view>
-    <view class='list' wx:for="{{webList}}" wx:for-index="idx">
-      <view class='data-item'>
-        <view class='item-info' bindtap='itemClick' id="{{idx}}" data-ct='web'>
-          <view>
-            <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
-            <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
-              <block wx:for="{{item.images}}">
-                <swiper-item>
-                  <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
-                </swiper-item>
-              </block>
-            </swiper>
-            <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
-          </view>
-
-        </view>
-
       </view>
     </view>
   </view>
 </view>
 
-<view class='categories'>
-  <view class='categories-container'>
-    <view class='title-container'>
-        <view class='title'>
-          <text>拓展资源</text>
-        </view>
-      </view>
-  <view class='list' wx:for="{{moreList}}" wx:for-index="idx">
-    <view class='data-item'>
-      <view class='item-info' bindtap='itemClick' id="{{idx}}" data-ct='more'>
-        <view>
-          <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
-          <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
-            <block wx:for="{{item.images}}">
-              <swiper-item>
-                <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
-              </swiper-item>
-            </block>
-          </swiper>
-          <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
-        </view>
-
-      </view>
-
-    </view>
-  </view>
-</view>
-</view>
-
-<view class='categories'>
-  <view class='categories-container'>
-    <view class='title-container'>
-        <view class='title'>
-          <text>瞎推荐</text>
-        </view>
-      </view>
-  <view class='list' wx:for="{{commandList}}" wx:for-index="idx">
-    <view class='data-item'>
-      <view class='item-info' bindtap='itemClick' id="{{idx}}" data-ct='command'>
-        <view>
-          <text selectable='false' class='desc' id="{{idx}}">{{item.desc}}</text>
-          <swiper class='item-swiper' wx:if="{{item.images.length>=1}}" indicator-dots="true" autoplay="true" interval="1000" duration="500">
-            <block wx:for="{{item.images}}">
-              <swiper-item>
-                <image src="{{item}}" class="item-slide-image" mode='aspectFit' />
-              </swiper-item>
-            </block>
-          </swiper>
-          <text selectable='false' class='who' id="{{idx}}">{{item.who}}</text>
-        </view>
-
-      </view>
-
-    </view>
-  </view>
-</view>
-</view>
 
 
-
-</view>
-
-
-
-<view class="history" bindtap="chooseDateClick">
+<!--<view class="history" bindtap="chooseDateClick">
   <text>往日</text>
-</view>
+</view>-->

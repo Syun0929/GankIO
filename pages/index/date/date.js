@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    selectedDate:[],
   },
 
   /**
@@ -65,10 +65,21 @@ Page({
   },
 
   requestAllDates:function(){
+    var that = this
+    var oneDay = ''
+    var year,monthh,dayy
     wx.request({
       url: 'https://gank.io/api/day/history',
       success:function(res){
         console.log(res.data.results)
+        for(var i=0; i<res.data.results.length; i++){
+          oneDay = res.data.results[i]
+          year = oneDay.substring(0,4)
+          monthh = oneDay.substring(5, 7)
+          dayy = oneDay.substring(8, 10)
+          that.data.selectedDate.push({ month: 'current', day: parseInt(dayy), color: 'white', background: '#b49eeb'})
+        }
+        that.setData({selectedDate:that.data.selectedDate})
       }
     })
   }

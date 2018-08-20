@@ -1,4 +1,5 @@
 // pages/about/about.js
+var utils = require('../../utils/util.js')
 Page({
 
   /**
@@ -65,21 +66,40 @@ Page({
   },
 
   clickToGank:function(){
-    wx.navigateTo({
-      url: 'gank/gank'
+    wx.setClipboardData({
+      data: 'https://gank.io/',
+      success:function(){
+        wx.showModal({
+          title: '关于干货集中营',
+          content: '过两天写啦...链接已经复制到剪贴板，自己打开浏览器去看吧',
+        })
+      }
     })
+    
+
+    /*wx.navigateTo({
+      url: 'gank/gank'
+    })*/
 
   },
 
   clickToProject: function () {
-    wx.navigateTo({
-      url: 'project/project',
+    wx.showModal({
+      title: '关于本项目',
+      content: '过两天写啦...',
     })
+    /*wx.navigateTo({
+      url: 'project/project',
+    })*/
   },
 
   clickToAuthor: function () {
-    wx.navigateTo({
-      url: 'author/author',
+    wx.showModal({
+      title: '关于作者',
+      content: '98年生，杂粮程序员，没啥好说的...',
     })
+    /*wx.navigateTo({
+      url: 'author/author',
+    })*/
   }
 })
