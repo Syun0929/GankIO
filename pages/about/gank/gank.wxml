@@ -1,2 +1,19 @@
 <!--pages/about/gank/gank.wxml-->
-<text>pages/about/gank/gank.wxml</text>
+<view>
+<view>
+<view><text class='title'>干货集中营</text></view>
+<view><text class='desc'>每日分享妹子图 和 技术干货，还有供大家中午休息的休闲视频</text></view>
+<view class='iwork-container'><image src='../../../imgs/bg.png' class='img-work'></image></view>
+
+
+</view>
+
+<view class='link-container'>
+<view class='link-list' wx:for="{{links}}">
+<button bindtap='linkClick' data-url='{{item.url}}'>{{item.title}}</button>
+
+</view>
+
+
+</view>
+</view>

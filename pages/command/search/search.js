@@ -70,6 +70,7 @@ Page({
 
   searchClick:function(){
     this.data.results=new Array()
+    this.data.pageNum=1
     this.requestData(this.data.keyWord)
   },
 
@@ -127,6 +128,5 @@ Page({
     if(item.url!=null){
       utils.copyToClipBoard(item.url)
     }
-    
   }
 })

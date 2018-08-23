@@ -18,9 +18,5 @@
       <image src='../../imgs/open.png'></image>
     </view>
 
-    <view class='about-item' bindtap='clickToAuthor'>
-      <text>关于作者</text>
-      <image src='../../imgs/open.png'></image>
-    </view>
   </view>
 </view>

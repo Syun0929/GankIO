@@ -1,1 +1,69 @@
 /* pages/about/project/project.wxss */
+page{
+  background-image: url('https://gank.io/static/images/bg.png')
+}
+
+.thaks-gank{
+  height: 200rpx;
+  margin-top: 100rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #00bcdc;
+
+}
+
+.thaks-gank text{
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin-top: 20rpx;
+}
+
+.already-container{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.already-title{
+  margin-top: 20rpx;
+}
+
+.already_list{
+  margin-top: 10rpx;
+  height: 30px;
+  margin-left: 15rpx;
+  display: flex;
+}
+
+.already_list checkbox{
+  display: block;
+  height: 26px;
+}
+
+.already_list text{
+  font-size: 16px;
+  line-height: 26px;
+  color: rgb(107, 102, 102);
+}
+
+.buchong text{
+  font-size: 14px;
+  color: rgb(71, 69, 69);
+  display: block;
+  margin-top: 10rpx;
+}
+
+.projlink{
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.projlink button{
+  background: #00bcdc;
+  color: white;
+  height: 35px;
+  line-height: 35px;
+}

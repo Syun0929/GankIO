@@ -1,2 +1,30 @@
 <!--pages/about/project/project.wxml-->
-<text>pages/about/project/project.wxml</text>
+<view>
+  <view class='thaks-gank'>
+    <text>GankIO是基于干货集中营开放API实现的微信小程序。</text>
+    <text>感谢干货集中营提供的数据Thanks♪(･ω･)ﾉ。</text>
+  </view>
+  <view class='already-container'>
+    <view class='already-title'>
+      <text>目前已实现功能：</text>
+    </view>
+
+    <view class='already-detail'>
+      <view class='already_list' wx:for="{{alreadyList}}">
+        <checkbox disabled='true' checked='{{item.finished}}' class='already-checkbox'></checkbox>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+
+    <view class='buchong'>
+      <text style='font-size:16px;'>补充：</text>
+      <text>因提交干货需验证账号登录，以及闲读数据返回格式在小程序端无法很好的二次展现故暂不支持。</text>
+
+      <text>同时，小程序对个人开发者不开放WebView组件以及无法调起浏览器，故所有的详情均需要手动复制链接到浏览器中打开！</text>
+    </view>
+
+    <view class='projlink'>
+      <button bindtap='clickProjPage'>项目Github主页</button>
+    </view>
+  </view>
+</view>

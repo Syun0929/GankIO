@@ -6,7 +6,6 @@
     "pages/dev/dev",
     "pages/dev/devdetail/devdetail",
     "pages/about/about",
-    "pages/about/author/author",
     "pages/about/gank/gank",
     "pages/about/project/project",
     "pages/index/date/date",
