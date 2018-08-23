@@ -1,6 +1,6 @@
 # GankIO：
 
-GankIO是基于干货集中营（http://gank.io）的开放数据API（https://gank.io/api）编写的一个小程序。
+GankIO是基于干货集中营（ http://gank.io ）的开放数据API（ https://gank.io/api ）编写的一个小程序。
 
 项目仅作为个人学习微信小程序框架的一个学习项目，由于个人水平有限，如代码有任何不当之处或程序的任何Bug均可issue我。
 
@@ -30,8 +30,10 @@ GankIO是基于干货集中营（http://gank.io）的开放数据API（https://g
 
 ## 截图：
 
-| ![1](shortcut\1.png) | ![2](shortcut\2.png) | ![3](shortcut\3.png) |
+| ![1](https://github.com/Ganart/GankIO/raw/master/shortcut/1.png) | 
+![2](https://github.com/Ganart/GankIO/raw/master/shortcut/2.png) |
+![3](https://github.com/Ganart/GankIO/raw/master/shortcut/3.png) |
 | -------------------- | -------------------- | -------------------- |
-| ![4](shortcut\4.png) | ![5](shortcut\5.png) | ![6](shortcut\6.png) |
-| ![7](shortcut\7.png) | ![8](shortcut\8.png) | ![9](shortcut\9.png) |
+| ![4](https://github.com/Ganart/GankIO/raw/master/shortcut/4.png) | ![5](https://github.com/Ganart/GankIO/raw/master/shortcut/5.png) | ![6](https://github.com/Ganart/GankIO/raw/master/shortcut/6.png) |
+| ![7](https://github.com/Ganart/GankIO/raw/master/shortcut/7.png) | ![8](https://github.com/Ganart/GankIO/raw/master/shortcut/8.png) | ![9](https://github.com/Ganart/GankIO/raw/master/shortcut/9.png) |
 
